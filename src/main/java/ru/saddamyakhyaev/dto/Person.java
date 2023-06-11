@@ -7,7 +7,7 @@ import java.util.Objects;
 
 @Getter
 @RequiredArgsConstructor
-public class Person {
+public class Person implements Comparable<Person> {
     private final String name;
     private final int age;
 
@@ -24,5 +24,15 @@ public class Person {
     @Override
     public int hashCode() {
         return Objects.hash(name, age);
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        if(o == null) throw new NullPointerException();
+
+        if(getAge() > o.getAge()) return 1;
+        if(getAge() < o.getAge()) return -1;
+
+        return getName().compareTo(o.getName());
     }
 }

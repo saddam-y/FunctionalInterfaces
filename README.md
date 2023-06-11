@@ -21,3 +21,9 @@ To be precise, each comparator must match:
 5. If compare(a,b) throw exception then compare(b,a) too
 
 * sgn - function that defines the sign 
+
+
+## Comparable
+Comparable also must matches the fields I described for Comparator.
+
+I edited Comparator test class and expanded for testing Comparable.
